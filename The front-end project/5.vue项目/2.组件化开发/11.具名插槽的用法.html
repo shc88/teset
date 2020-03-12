@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    <form-left>
+        <!-- template 能包裹多个插槽，而如果把插槽写到标签上，只能写一个，他是固定的 -->
+        <template slot="header">
+<p>你是谁</p>
+<p>请问你是</p>
+
+        </template>
+       
+        <p slot="main">你是谁</p>
+        <p slot="footer">你是谁</p>
+        <p></p>
+    </form-left>
+    </div>
+    
+    <script src="lib/vue-2.4.0.js"></script>
+    <script>
+        //插槽的用法
+        Vue.component('form-left',{
+            data:function(){
+                return {
+                
+                }
+            },
+            //strong是标题 ，slot是插槽
+            //form-left里面的内容就是通过slot动态改变的
+            //如果form-left中没有内容，那么就会显示插槽的内容，
+            //如果有内容，就把插槽中的内容覆盖了
+            template:`<div>
+                    <header>
+                    <strong>error:</strong>
+                    <slot name="header"></slot>
+                    </header>
+                    <main>
+                        <strong>main：</strong>
+                    <slot name="main"></slot>
+                    </main>
+                  <footer>
+                    <strong>footer:</strong>
+                    <slot name="footer"></slot>
+                    </footer>
+                </div>`
+        })
+        var vm=new Vue({
+            el:"#app",
+        })
+    </script>
+</body>
+</html>

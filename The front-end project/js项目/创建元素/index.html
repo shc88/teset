@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#dv{
+				  width: 100px;
+				  height: 200px;
+				  background-color: antiquewhite;
+			}
+			.btn1{
+				 width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dv">
+			
+		</div>
+		<script type="text/javascript">
+			//  document.createElement创建元素
+		  var btn=document.createElement("input");
+		  btn.value="创建";
+		  btn.type="button";
+		  btn.className="btn1";
+		  var btn1=document.createElement("p");
+		  setInnerText(btn1,"这是什么鬼");
+		  document.getElementById("dv").appendChild(btn1);
+		  //把创建的新元素添加到id为dv的div中
+		 document.getElementById("dv").appendChild(btn);
+		</script>
+	</body>
+</html>

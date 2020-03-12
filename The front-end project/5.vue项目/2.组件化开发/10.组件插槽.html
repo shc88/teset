@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+    <form-left>这是个啥</form-left>   
+    <form-left>这是你爸爸</form-left>
+    </div>
+    <script src="lib/vue-2.4.0.js"></script>
+    <script>
+        //插槽的用法
+        Vue.component('form-left',{
+            data:function(){
+                return {
+                
+                }
+            },
+            //strong是标题 ，slot是插槽
+            //form-left里面的内容就是通过slot动态改变的
+            //如果form-left中没有内容，那么就会显示插槽的内容，
+            //如果有内容，就把插槽中的内容覆盖了
+            template:`<div>
+                
+                <strong>error:</strong>
+                 <slot></slot>
+                </div>`
+        })
+        var vm=new Vue({
+            el:"#app",
+        })
+    </script>
+</body>
+</html>

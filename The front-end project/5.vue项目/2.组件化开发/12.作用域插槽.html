@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current{
+       background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <form-left :msg="msg">
+         <template slot-scope="slotProps">
+           <strong class="current" v-if="slotProps.info.id==3"> {{slotProps.info.name}}</strong>
+           <span v-else>{{slotProps.info.name}}</span>
+         </template>
+       </form-left>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        Vue.component('form-left',{
+            props:['msg'],
+            template:`<div>
+                
+                    <li :key="item.id" v-for="item in msg" >
+                     
+                        <slot :info="item">{{item.name}}</slot>
+                        </li>
+                 
+                
+                </div>`
+        });
+         var vm=new Vue({
+            el:"#app",
+            data:{
+               msg:[
+                   
+               {id:1,name:"苹果"},
+               {id:2,name:"例子"},
+               {id:3,name:"赵三"},
+            ]
+            }
+        })
+    </script>
+</body>
+</html>

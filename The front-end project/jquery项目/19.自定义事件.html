@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+<style type="text/css">
+			.father{
+				  width: 500px;
+				  height: 300px;
+				  background-color: #0000FF;
+			}
+			.son{
+				  width: 200px;
+				  height: 200px;
+				  background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		<button><a href="http://www.baidu.com">这是啥</a></button>
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				要写自定义事件只能用如下方式
+				自定义事件的两个条件
+				1.事件必须通过on绑定
+				2.事件必须通过trigger来触发
+				*/
+				$(".son").on("myclick",function(){
+					  alert("123");
+				})  
+				  $(".son"). trigger("myclick");
+			})
+		</script>
+	</body>
+</html>

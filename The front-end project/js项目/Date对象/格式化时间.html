@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+	      function getTime(date){
+			        
+					 //获取年份
+					var  year=date.getFullYear();
+					//获取月份
+					var month= date.getMonth()+1;
+					//获取日期
+					var day=date.getDate();
+					//获取数字
+					var hour=date.getHours();
+					var min=date.getMinutes();
+					var scound=date.getSeconds();
+					return  year+"年"+month+"月"+day+"日"+"  "+hour+":"+min+":"+scound;
+		  }
+		  console.log(getTime(new Date()));
+		</script>
+	</body>
+</html>

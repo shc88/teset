@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p v-font-size>你是谁</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+
+          },
+          methods:{
+
+          },
+          directives:{
+              //这个function 代表我们同时写了bind和updated指令
+           'font-size':function(el){
+                 el.style.color='red';
+           }
+          }
+       })
+</script>
+
+</body>
+</html>

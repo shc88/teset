@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inner{
+             width: 100%;
+            height: 180px;
+            background-color: pink;
+        }
+        .outInner{
+             width: 100%;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--    <div class="inner" @click="divHandler">-->
+<!--1. stop 阻止冒泡事件的      &ndash;&gt;-->
+<!--        <input type="button" value="戳他" @click.stop="btnHandler">-->
+<!--2.      prevent 是阻止默认行为的&ndash;&gt;-->
+<!--        <a href="https://www.baidu.com" @click.prevent="aHandler">this tis</a>-->
+<!--    </div>-->
+<!--    <div class="inner" @click.capture="divHandler">-->
+<!--3.      capture使用事件捕获模式，更改触发的顺序&ndash;&gt;-->
+<!--        <input type="button" value="戳他" @click="btnHandler">-->
+<!--    </div>-->
+<!--4. 使用.self是只有点我的时候才会触发回调函数-->
+<!--    <div class="inner" @click.self="divHandler">-->
+<!--          &lt;!&ndash;       capture使用事件捕获模式，更改触发的顺序&ndash;&gt;-->
+<!--            <input type="button" value="戳他" @click="btnHandler">-->
+<!--        </div>-->
+<!--5.使用.once 事件只触发一次-->
+<!--    <a href="http://www.baidu.com" @click.prevent.once="aHandler">你是个小猪</a>-->
+<!--6.stop和，self阻止冒泡的区别，.stop是阻止所有的冒泡 .self是阻止当前身上的冒泡-->
+    <div class="outInner" @click.self="outHandler">
+        <div class="inner" @click="divHandler">
+            <input type="button" value="捉它" @click.stop="btnHandler">
+        </div>
+    </div>
+        </div>
+        <script src="../js/vue.js"></script>
+        <script>
+              var app=new Vue({
+                  el:"#app",
+                  data:{
+
+                  },
+                  methods:{
+                  divHandler(){
+                      alert("触发了 div的点击事件");
+                  },
+                  btnHandler(){
+                      alert("触发了 btn的点击事件");
+
+                  },
+                      outHandler(){
+                      alert("触发了 外层的点击事件");
+                      }
+                  }
+               })
+        </script>
+        </body>
+        </html>

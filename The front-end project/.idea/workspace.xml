@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6da4142d-c86d-452c-9b51-eaf6df6ce500" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YA8AWKlmXJFFyhREP8CYBEdOkk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/html+css的案例/img" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\编程相关的文件\前端项目\js项目" />
+      <recent name="D:\编程相关的文件\前端项目\html+css的案例\img" />
+      <recent name="D:\编程相关的文件\前端项目\html+css的案例\js" />
+      <recent name="D:\编程相关的文件\前端项目\qq音乐播放器\css" />
+      <recent name="D:\编程相关的文件\前端项目" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\编程相关的文件\前端项目\html+css的案例\img" />
+      <recent name="D:\编程相关的文件\前端项目\qq音乐播放器\js" />
+      <recent name="D:\编程相关的文件\前端项目\qq音乐播放器\img" />
+      <recent name="D:\编程相关的文件\前端项目\qq音乐播放器" />
+      <recent name="D:\编程相关的文件\前端项目\qq音乐播放器\css" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6da4142d-c86d-452c-9b51-eaf6df6ce500" name="Default Changelist" comment="" />
+      <created>1582373895533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582373895533</updated>
+      <workItem from="1582373900003" duration="609000" />
+      <workItem from="1582374517941" duration="5484000" />
+      <workItem from="1582380880142" duration="87000" />
+      <workItem from="1582434094596" duration="9144000" />
+      <workItem from="1582448113101" duration="15384000" />
+      <workItem from="1582773450831" duration="4969000" />
+      <workItem from="1582781094750" duration="3351000" />
+      <workItem from="1582784463976" duration="12404000" />
+      <workItem from="1582799468037" duration="62000" />
+      <workItem from="1582806980978" duration="326000" />
+      <workItem from="1582807339516" duration="8212000" />
+      <workItem from="1582858755837" duration="15740000" />
+      <workItem from="1582900195212" duration="388000" />
+      <workItem from="1583198851963" duration="117000" />
+      <workItem from="1583198978775" duration="14064000" />
+      <workItem from="1583463073780" duration="288000" />
+      <workItem from="1583463376397" duration="98000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582454894835">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582454894835" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582787088221">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582787088221" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1582900580495">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582900580495" />
+    <state x="429" y="72" key="SettingsEditor" timestamp="1583199078007">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="429" y="72" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583199078007" />
+    <state x="760" y="240" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582377695118" />
+    <state x="1405" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1582439854417">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1405" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582439854417" />
+  </component>
+</project>

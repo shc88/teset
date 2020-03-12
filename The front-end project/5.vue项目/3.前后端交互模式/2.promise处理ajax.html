@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        function foo(){
+          return new Promise(function(resolve,reject){
+               setInterval(function(){
+                    resolve('你是个小猪,n你成功了');
+               },100) 
+          })
+        }
+          foo().then(
+           function(val){
+                 console.log(val+123);
+                 
+           }
+          ).catch(function(){
+                console.log(234);
+                
+          })
+          .finally(
+              function(){
+                   console.log(456);
+                   
+              }
+          )
+    
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<span class="span1" name="it666"></span>
+		<span class="span2" name="lnj"></span>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		 $(function(){
+		$("span").eq(0).prop("item","666");
+		   console.log($("span").prop("item"));
+		   $("span").removeProp("item");
+		   
+		   //prop不仅可以设置属性也可以设置属性节点
+		   //官方推荐在操作属性节点的时候，具有true和
+		   //false两个属性的属性节点时，如checked，selected
+		   //或者disabled时使用prop，其他的使用attr
+		   //因为prop返回的是布尔值，更方便
+		   console.log($("span").prop("class"));
+		   $("span").prop("class","box");
+		 })
+		</script>
+	</body>
+</html>

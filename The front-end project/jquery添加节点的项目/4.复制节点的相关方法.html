@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv{
+              width: 100px;
+            height: 100px;
+            background: #0000FF;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+    <li>深复制</li>
+    <li>浅复制</li>
+    <li></li>
+    <li></li></div>
+<button>创建</button>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+$(function(){
+    $("button").click(function(){
+         //浅复制  参数为false
+          //深复制 参数为true  深复制会复制事件 而浅复制不会复制事件
+       // $("li:first").clone(false).insertAfter("button");
+        $("li").eq(1).clone(false).insertAfter("button");
+        $("li").eq(0).clone(true).insertAfter("button");
+      });
+    $("li").click(function(){
+           alert(123);
+    })
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+			padding:0;
+				margin: 0;
+			}
+			#ulobj>li{
+				  width: 80px;
+				  height: 50px;
+				  background-color: #A52A2A;
+				  margin-left: 50px;
+				  line-height: 50px;
+				  color: white;
+				  text-align: center;
+				  
+				  list-style: none;
+			}
+			.active{
+				 display: none;
+			}
+			.active>li{
+				  width: 80px;
+				  height: 50px;
+				  list-style: none;
+				  line-height: 50px;
+				  text-align: center;
+				   background-color: black;
+				   
+				   
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="ulobj">
+				<li>风暴之女
+				<ul class="active">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul></li>
+				<li>拉亚克斯<ul class="active">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul></li>
+				<li>维鲁雅斯<ul class="active">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul></li>
+				<li>复仇之矛<ul class="active">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul></li>
+			</ul>
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				  $("#ulobj>li").mouseenter(function(){
+					   var $sub= $(this).children(".active");
+					   //stop方法就是停止动画队列，把前一个动画停止，
+					   $sub.stop();
+					   $sub.slideDown(1000);
+					   
+					   
+				  })
+				  $("#ulobj>li").mouseleave(function(){
+					    var  $onther=$(this).children(".active");
+						$onther.stop();
+					    $onther.slideUp(1000);
+				  })
+			})
+		</script>
+	</body>
+</html>

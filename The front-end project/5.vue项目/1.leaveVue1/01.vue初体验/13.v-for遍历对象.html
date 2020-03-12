@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for遍历对象</title>
+</head>
+<body>
+<div id="app">
+<!-- 在遍历对象的时候，第一个参数是值，第二个参数是键，第三个参数是索引    -->
+    <p v-for="(val,key,i) in msg">值：{{val}}----键：{{key}}---索引：{{i}}</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+          msg:{
+                  name:"张三",
+                  age:"18",
+                  stop:function(){
+                      alert(123);
+                  }
+          }
+          },
+          methods:{
+
+          }
+       })
+</script>
+</body>
+</html>

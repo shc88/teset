@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				 padding: 0 ;
+				 margin: 0;
+			}
+			#dv{
+				width: 400px;
+				height: 400px;
+				border: #00FFFF 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<button>设置html</button>
+		<button>获取html</button>
+		<button>设置text</button>
+		<button>获取text</button>
+		<button>设置val</button>
+		<button>val</button>
+		<div id="dv">
+			
+			
+		</div>
+		<script src="jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			/*
+			HTML代码/文本/值
+			html([val|fn])
+			text([val|fn])
+			val([val|fn|arr])
+			*/
+			
+				 var btn=document.getElementsByTagName("button");
+				 btn[0].click(function(){
+					   $("#dv").html("<p><span></span></p>");
+				 })
+				 // btn[1].click(function(){
+				 					   
+				 // });
+				 // btn[2].click(function(){
+				 					   
+				 // });
+				 // btn[3].click(function(){
+				 					   
+				 // })
+				 // btn[4].click(function(){
+				 					   
+				 // });
+				 // btn[5].click(function(){
+				 					   
+				 // });
+			
+		</script>
+	</body>
+</html>

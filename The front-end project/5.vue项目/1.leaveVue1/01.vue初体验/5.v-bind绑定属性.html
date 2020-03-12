@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--v-bind绑定属性-->
+<div id="app"><p v-bind:title="myTile+'123'" @click="getA">123213213</p>
+    <img :src="mySrc" alt=""></div>
+<script src="../js/vue.js"></script>
+<script>
+      const app=new Vue({
+              el:"#app",
+          data:{
+                  myTile:"这是什么东西",
+              mySrc:"../img/1.jpg"
+          },
+          methods:{
+                  getA(){
+                        alert("你是个小猪");
+                  }
+          },
+       })
+</script>
+</body>
+</html>

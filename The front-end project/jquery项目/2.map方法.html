@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			var arr=[1,2,3,4,5];
+	var obj={name:"网三",age:13};
+			//原生js使用map方法遍历数组 不能遍历伪数组
+		/*	arr.map(function(value,index,array){
+				//value 当前遍历到的元素
+				//index 当前遍历到的索引
+				//array 当前遍历到的数组
+				console.log(value,index,array);
+			})
+		*/
+	   //jquery使用map方法 第一个参数是要遍历的数组，
+	   //第二个参数是每遍历一个元素后执行的回调函数
+	   
+	   //回调函数的参数
+	   //第一个参数是遍历到的元素
+	   //第二个参数是遍历到的索引
+	   
+	   /*
+	   
+	   jquery中map和each中静态方法的区别
+	   map方法就是默认返回一个空数组
+	   each方法就是遍历谁就返回谁
+	   map方法可以在回调函数中对返回值进行处理
+	   each方法不会对回调函数中的返回值进行处理
+	   */
+	   $.map(obj,function(value,index){
+		   console.log(value,index);
+	   })
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jquery中操作CSS的方法</title>
+	</head>
+	<body>
+  <div></div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				  //1.逐个创建法
+		  // $("div").css("width","100px");		  
+				//   $("div").css("height","100px");
+				//   $("div").css("background-color","red");
+				  //链式设置法
+				  // $("div").css("width","100px").css("height","100px").css("background-color","red");
+				  //批量操作法
+				  
+				  $("div").css({
+					  width:"100px",
+					  height:"200px",
+					  background:"red"
+				  })
+				  
+				  //获取css样式
+				  
+				var  div1= $("div").css("width");
+				console.log(parseInt(div1));
+			})
+		</script>
+	</body>
+</html>

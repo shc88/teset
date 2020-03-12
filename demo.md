@@ -13,9 +13,14 @@
 3把代码存储到.git仓储中
 （1）把git放在大门口
 git add ./demo.md
+把所有修过过的文件添加到大门口
+git add ./
 (2)把代码放到房间里
 git commit 这是把代码放到仓库里了
-git commit -m "这是什么"  -m是给个提示，“”里面的内容就是提示
+git commit -m "这是什么"     
+git commit all -m 这是一次性把添加的东西添加到仓库里
+
+-m是给个提示，“”里面的内容就是提示
 仓储的房间就是版本库
 project就是工作区
 

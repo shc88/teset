@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.class1{
+				  width: 100px;
+				  height: 100px;
+				  background-color: #00FFFF;
+			}
+			.class2
+			{
+				 border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="btn">添加类</button>
+		<button type="button" id="btn1">删除类</button>
+		<button type="button" id="btn2">切换类</button>
+		<div class="" id="dv">
+			
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				  /*
+				  // 作用  添加类名 如果需要添加多个 只需用空格隔开即可
+				  addClass(class|fn)
+				  // 作用  删除类名 如果需要删除多个 用空格隔开
+				  removeClass([class|fn])
+				  // 作用  切换类名 如果有就删除  如果没有就添加
+				  toggleClass(class|fn[,sw])
+				  */
+				 $("#btn").click(function(){
+					 
+					 $("#dv").addClass("class1 class2");
+				 })
+				 $("#btn1").click(function(){
+				 					 
+				 	$("#dv").removeClass("class2");
+				 })
+				 $("#btn2").click(function(){
+				 					 
+				 	$("#dv").toggleClass("class2 class1");
+				 })
+			})
+		</script>
+	</body>
+</html>

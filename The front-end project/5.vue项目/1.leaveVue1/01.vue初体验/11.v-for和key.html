@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div class="getABo" >
+        <ul>
+<!--            i就是数组的索引值-->
+        <li v-for='(item,i) in mov'>{{item}}</li>
+        </ul></div>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+           mov:['复仇者联盟','小行星','你是个傻子','你是个瘸子'],
+          },
+          methods:{
+
+          }
+       })
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+	<h3 id="time">{{msg}}</h3>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+          msg:"你是个小猪"
+          },
+          methods:{
+        show(){
+               alert("你是谁");
+        }
+          },
+		  /*1.这个函数是创建前*/
+          beforeCreate(){  //这是我们遇到的第一个生命周期函数，表示实例完全被创建之前，会执行他
+          //在beforeCreate被执行的 时候，data数据和methods方法都没有初始化
+
+          },
+		  /*2.以创建*/
+          created(){
+                  //这是遇到的第二个生命周期函数，
+              
+              this.show();
+              //在created中，data数据和methods方法已经被初始化好了
+              //如果要调用methods中的方法，最早要在created中去调用
+          },
+		  /*3.即将挂载 */ 
+          beforeMount(){
+              /*
+              这是遇到的第三个生命周期函数，表明，模板已经在内存中编辑完成，
+              但是尚未把模板渲染到页面中去
+              */
+        
+		//在beforMount执行的时候，页面中的元素，还没有真正被替换过来，只是之前写的一些模板
+		
+          },
+		  //4.裱好的,骑乘状态,马上,在马上
+		  mounted(){
+			     //这是遇到的第四个生命周期函数，表示内存中的模板，已经真实的挂载到页面上了，
+				 //如果要通过某些插件操作页面上的dom节点了，最早要在mounted中操作
+				 //如果没有其他操作的话，这个实例，就静静的躺在内存中
+				 //vue实例已经初始化完成了，此时组件已经脱离了创建阶段，已经进入了运行阶段
+				 // console.log(document.getElementById("time").innerText);
+		  },
+		  //接下来是运行中的两个事件了
+		  //5.更新前
+		  beforeUpdate(){     //这时候表示我们的界面还没有被更新
+			   console.log(document.getElementById("time").innerText);
+			   //当执行beforUpdate的时候，页面中的数据还是旧的
+			   //但是数据是最新的，页面中的数据尚未与新的数据保持同步
+		  },
+		  // 6.更新的
+		  
+		  updated(){
+			  console.log(document.getElementById("time").innerText);
+			   console.log(this.msg);
+			      // updated事件执行的时候，页面上的数据已经跟新的数据保持同步了
+		  }
+		  //总共八步
+		  // 7.销毁前
+		  //8.销毁后
+       })
+</script>
+</body>
+</html>

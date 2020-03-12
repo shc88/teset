@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   var p=new Promise(function(resolve,reject){
+             //这里实现异步任务
+            
+         setInterval(function(){
+            var flag=false;
+             if(flag){
+                resolve("hello,you are right");
+             }else{
+                 reject('你是错的');
+             }
+         },100);
+     
+   });
+p.then(function(val){
+       console.log(val)
+},function(val){
+     console.log(val)
+})
+
+    </script>
+</body>
+</html>

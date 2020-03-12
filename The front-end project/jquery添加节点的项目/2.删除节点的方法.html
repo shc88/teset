@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="创建">
+<ul>
+    <li class="item">第一个div</li>
+    <li class="item">第二个div</li>
+    <li >第三个div</li>
+</ul>
+<div>这是div
+    <p id="pp">这是p</p>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(function(){
+  /*
+  删除节点的方法
+    empty()  //删除指定元素的内容和子元素，指定元素自身不会被删除
+remove([expr])  //删除指定元素
+detach([expr])
+   */
+    $("#btn").click(function(){
+     $("li").empty();
+
+    })
+})
+</script>
+</body>
+</html>

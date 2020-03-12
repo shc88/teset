@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7.css">
+</head>
+<body>
+<div id="app">
+    <label for="">id:
+        <input type="text" v-model="id">
+    </label>
+
+    <label for="">name:
+        <input type="text"  v-model="name">
+    </label>
+    <input type="button" value="添加" @click="add()">
+    <label for="">搜索关键字:
+        <input type="text"  v-model="keyWord">
+    </label>
+    <input type="button" value="搜索">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>ctime</th>
+            <th>operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="item in search(keyWord)" :key="item.id">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{dataStr|ctimeForm('')}}</td>
+            <td><a href="" @click.prevent="deleteData(item.id)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <td>{{dataStr|ctimeForm('')}}</td>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    //全局的过滤器
+    Vue.filter('ctimeForm',function(dataStr,pre=""){
+        var date=new Date();
+        var y=date.getFullYear();
+        var m=date.getMonth()+1;
+        var s=date.getDate();
+
+        if(pre.toLowerCase()== "yyyy-mm-dd"){
+            return `${y}-${m}-${s}`;
+        }
+        else
+        {
+            var yyyy=date.getHours();
+            var mm=date.getMinutes();
+            var second=date.getSeconds();
+            return `${y}-${m}-${s}   ${yyyy}:${mm}:${second}`
+        }
+    })
+    const app=new Vue({
+        el:"#app",
+        data:{
+            id:'',
+            name:'',
+            keyWord:"",  //搜索的关键字
+            list:[
+                {id:1,name:'奔驰马'},
+                {id:2,name:'宝马'},
+                {id:3,name:'保时捷'},
+                {id:4,name:'奥迪'},
+
+            ]
+        },
+        methods:{
+            add(){
+
+                this.list.push({id:this.id,name:this.name});
+                this.id=this.name="";
+
+            },
+            deleteData(id){
+                // this.list.some((item,i)=>{
+                //     if(item.id == id){
+                //        this.list.splice(i,1);
+                //         return true;
+                //     }
+                // })
+                //findIndex 寻找索引
+                var index=this.list.findIndex(item=>{
+                    if(item.id==id){
+
+                        return true;
+                    }
+
+                })
+                this.list.splice(index,1);
+            },
+            //foreach,some,findIndex,filter  数组的新方法
+            search(keyWord){
+                //根据关键字进行数据的搜索
+
+                //        this.list.forEach(item=>{
+                //              if(item.name.indexOf(keyWord)!=-1){
+                //                 newList.push(item);
+                //              }
+                //        })
+                // return newList;
+                return this.list.filter(item=>{
+                        if(item.name.includes(keyWord)){
+                            return item;
+                        }
+                    }
+                )
+            }
+        },
+        filters:{
+
+            //如果私有的过滤器和全局的过滤器名称一致，那么就先调用私有的
+            ctimeForm(dataStr,pre=""){
+                var date=new Date();
+                var y=date.getFullYear();
+                var m=date.getMonth()+1;
+                var s=date.getDate();
+
+                if(pre.toLowerCase()== "yyyy-mm-dd"){
+                    return `${y}-${m}-${s}`;
+                }
+                else
+                {
+                    var yyyy=date.getHours();
+                    var mm=date.getMinutes();
+                    var second=date.getSeconds();
+                    return `${y}-${m}-${s}   ${yyyy}:${mm}:${second}`
+                }
+            }
+        }
+    })
+
+    //过滤器的定义语法
+    //Vue.filter('过滤器的名称',function(){})
+    //过滤器第一个参数必须是过滤器管道符前面传过来的数据
+
+</script>
+</body>
+</html>

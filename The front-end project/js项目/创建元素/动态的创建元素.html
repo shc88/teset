@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态的创建元素</title>
+		<style type="text/css">
+			*{
+				  padding: 0;
+				  margin: 0;
+				  border: 0;
+			}
+			#dv{
+				  width: 300px;
+				  height: 400px;
+				  border:1px #FAEBD7 solid;
+				  }
+			#dv ul{
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="创建元素" />
+		<div id="dv">
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			//创建ul表格
+			var dv=document.getElementById("dv");
+			
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				 var ul=document.createElement("ul");
+				 dv.appendChild(ul);
+				 var  names=["黯然","黎明","就在","眼前按","是吗"];
+				 for(var  i =0;i<names.length;i++){
+					  var lis=document.createElement("li");
+						ul.appendChild(lis);
+						lis.innerHTML=names[i];
+						lis.onmouseover=onmouseovermee; //给li标签添加鼠标移入和移除事件
+						lis.onmouseleave=onmousemr1;
+						
+				 }
+			}
+		function	onmouseovermee(){
+			   this.style.backgroundColor="red";
+		}
+		function onmousemr1(){
+			 this.style.backgroundColor="";
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jquery中的事件绑定</title>
+	</head>
+	<body>
+		 <input type="button" name="" id="btn" value="创建" />
+		
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*编写jquery相关代码
+				1.eventName(fn)
+				编码效率略高 //部分事件jquery没有实现，所以不能添加
+				2.on(eventName,fn)
+				编码效率略低  //所有js事件都可以添加
+				两种方式都可以添加多个事件，
+				*/
+				//第一种方式   
+				  // $("#btn").click(function(){
+					 //     alert("123");
+				  // })
+				  //第二种方式
+				  $("#btn").on("click",function(){
+					    alert("123");
+				  })
+			})
+		</script>
+	</body>
+</html>

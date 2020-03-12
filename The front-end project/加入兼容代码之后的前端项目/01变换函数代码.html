@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#dv{
+				 width: 400px;
+				 height: 400px;
+				 background-color: #000000;
+				 position: absolute;
+				 left: 0;
+				 top: 50;
+				 
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="变换">
+		<div id="dv">
+			
+		</div>
+		<script src="js/conner.js"></script>
+		<script type="text/javascript"> 
+		//回调函数  连续三次执行动画函数
+			$("btn").onclick=function(){
+				 var json={"width":500,"height":500,"left":200};
+				  donghua($("dv"),json,function(){
+					    var json2={"width":700,"height":20000,"left":200};
+						donghua($("dv"),json2,function(){
+							  var json3={"width":1500,"height":900,"height":500,"left":200};
+							  donghua($("dv"),json3);
+						});
+				  });
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="lib/vue.js"></script>
+ <script src="lib/axios.js"></script>
+ <script>
+   //配置axios请求拦截器
+   axios.interceptors.request.use(function(config){
+        config.headers.mytoken='nihao'
+        return config;
+   },function(err){
+        console.log(err)
+   }
+   )  ;
+   //响应拦截器   对数据进行加工
+   axios.interceptors.response.use(function(res){
+        var data=res.data;
+        return data
+   },function(err){
+        console.log(err)
+   }
+   )
+   axios.get('https://autumnfish.cn/api/joke/list?num=1').then(function(result){
+        console.log(result)
+   },
+   function(err){
+         console.log(err);
+   })
+   
+  
+ </script>
+</body>
+</html>

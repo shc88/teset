@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				  width: 1000px;
+				  height: 100px;
+				  border: 1px solid red;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#list{
+				    font-size: 40px;
+				 }
+				 #list li{
+					   float: left;
+					   margin-left: 100px;
+						list-style-type: none;
+					   cursor: pointer;
+					   
+				 }
+				 #cutten{
+					    position: absolute;
+						opacity: 0.5;
+						left: 30px;
+				 }
+				 
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<span id="cutten"><img src="img/1.jpg" width="100" height="100"></span>
+			<ul id="list">
+				<li>张三</li>
+				<li>李四</li>
+				<li>anger</li>
+				<li>body</li>
+				<li>钢铁侠</li>
+				<li>雷神</li>
+			</ul>
+			<script src="js/conner.js"></script>
+			<script type="text/javascript">
+				//获取云彩
+				var cutten=$("cutten");
+				//获取li标签
+				var list=$("list").children;
+				for(var i=0;i<list.length;i++){
+					  //注册鼠标进入事件
+					  list[i].onmouseover=overhee;
+					  //注册鼠标点击事件
+					  list[i].onclick=clickhee;
+					  //注册鼠标离开时间
+					  list[i].onmouseout=outhee;
+					  
+				}
+			  
+				function overhee(){
+					 donghua(cutten,this.offsetLeft);
+				}
+				var  lastposition=0;
+				function clickhee(){
+					 lastposition=this.offsetLeft;
+				}
+				function outhee(){
+					 donghua(cutten,lastposition);
+				}
+			</script>
+		</div>
+	</body>
+</html>

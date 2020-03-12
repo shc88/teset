@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" name="" id="btn" value="切换" /><br/>
+		 <img src="https://www.baidu.com/img/bd_logo1.png" >
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				  
+				//点击按钮把图片的src换成text里的
+				var  btn1=$("#btn");
+			 btn1.click(function(){
+				 var  input=document.getElementsByTagName("input")[0];
+				   var txt=input.value;
+				   console.log(txt);
+				  // $("img").prop("src",txt);
+				  $("img").attr("src",txt);
+			 })
+			})
+		</script>
+	</body>
+</html>

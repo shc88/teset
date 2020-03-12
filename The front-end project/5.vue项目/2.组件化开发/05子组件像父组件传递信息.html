@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 静态的传递数据 -->
+			<div :style='{fontSize:fontSize+"px"}'>{{pmsg}}</div>
+			<hello-world :me="me" @enlarge-text="big"></hello-world>
+			<input type="button" value="这是" @click="big">
+			<!-- 动态的传递数据 -->
+			
+		</div>
+		<script src="lib/vue-2.4.0.js"></script>
+		<script>
+			//定义一个组件
+			/*
+		如果在props中使用驼峰的形式,模板中需要使用短横线的方式
+		在字符串形式中没有限制
+			*/
+			Vue.component('hello-world',{
+				props:['me'],
+				//首先要现在template里面绑定一个@click="$emit('方法名')",再把使用组件绑定一个@方法名="要绑定的方法"
+				template:`<div><button @click="$emit('enlarge-text')">这是谁</button></div>`
+			})
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					me:"你是个傻",
+					 pmsg:"你是个小猪222",
+					 fontSize:10
+				},
+				methods:{
+					big(){
+						  this.fontSize+=10
+						  
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

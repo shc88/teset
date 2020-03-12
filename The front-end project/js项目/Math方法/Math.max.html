@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+	function Max(){
+		 this.getmax=function(){
+			  var max=arguments[0];
+			  for(var i=0;i<arguments.length;i++){
+				   if(max<arguments[i]){
+					    max=arguments[i];
+						
+				   }
+			  }
+			  return max;
+		 }
+	}
+	var max=new Max();
+	var getmax=max.getmax(10,20,50);
+	  console.log(getmax);
+		</script>
+	</body>
+</html>

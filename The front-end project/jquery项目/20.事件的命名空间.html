@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.father {
+				width: 500px;
+				height: 300px;
+				background-color: #0000FF;
+			}
+
+			.son {
+				width: 200px;
+				height: 200px;
+				background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+			<button><a href="http://www.baidu.com">这是啥</a></button>
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//其中click后.ze就是命名空间
+				 /*
+				 想要事件的命名空间有效，必须满足以下两个条件
+				 1.事件是通过on来绑定的
+				 2.通过trigger触发事件
+				 */
+				// $(".son").on("click.ze", function() {
+				// 	alert("你是一个小猪头");
+				// })
+				// $(".son").on("click.zhangsan", function() {
+				// 	alert("123");
+				// })
+				
+				// $(".father").click(function(){
+				// 	  $(".son").trigger("click.ze");
+				// })
+				/*
+				  1利用trigger触发子元素带命名空间的事件，那么父元素带相同
+				  命名空间的事件也会被触发，而父元素没有命名空间的事件不会被触发
+				  2利用trigger触发子元素不带命名空间的事件，那么子元素所有相同
+				  类型的事件和父元素所有相同类型的事件都会被触发
+				*/
+			   $(".son").on("click.ze", function() {
+			   	alert("你是一个小猪头");
+			   })
+			   // $(".son").on("click.zhangsan", function() {
+			   // 	alert("123");
+			   // })
+			   $(".father").on("click.ze", function() {
+			   	alert("你是一个小猪头22");
+			   })
+			  $(".son").trigger("click.ze");
+			})
+		</script>
+	</body>
+</html>

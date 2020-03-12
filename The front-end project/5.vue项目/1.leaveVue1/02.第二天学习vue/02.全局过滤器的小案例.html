@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{msg|msgForm('正则')}}</p>
+    <input type="text" v-model="data">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    //定义一个过滤器  过滤器可以多次使用
+    Vue.filter('msgForm',function(msg,data){
+        //replace可以写字符串 也可以写正则
+        return msg.replace(/秃头/g,data);
+    })
+      var app=new Vue({
+          el:"#app",
+          data:{
+       msg:"曾经我也是一个杀杀杀的少年，现在变成了秃头大叔，秃头使我变强"
+          },
+          methods:{
+
+          }
+       })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="船舰" @click="list" ref="input">
+        <p ref="myh3">你是什么东西</p>
+         <my-son ref="mySon"></my-son>
+    </div>
+    
+    <script src="lib/vue.js"></script>
+    <script>
+        Vue.component('my-son',{
+              data:function(){
+                   return {
+                        msg:"你是个小猪"
+                   }
+              },
+              template:"<div>你是个</div>",
+              methods:{
+                  list(){
+                      console.log(123);
+                  }
+              }
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+             msg:"这是什么鬼啊啊",
+            },
+            methods:{
+                list(){
+                    // ref 是引用的意思 //ref是虚拟DOM  可以父组件获取子组件的数据或者方法，非常的方便
+                     console.log(this.$refs.myh3.innerText);
+                     console.log(this.$refs.mySon.msg);
+                    this.$refs.mySon.list()
+                }
+            }
+        })
+    </script>
+</body>
+</html>

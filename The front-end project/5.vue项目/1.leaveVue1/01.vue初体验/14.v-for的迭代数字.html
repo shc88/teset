@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+<!--循环时不仅可以数组，对象，也可以给一个数字 如果使用迭代数字的话，数字从1开始
+    当在2.2vue版本以上使用v-for的时候，key是必须的
+   -->
+    <p v-for="(item,key) in 10">这是第{{item}}次循环{{key}}</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+
+          },
+          methods:{
+
+          }
+       })
+</script>
+</body>
+</html>

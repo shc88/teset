@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>随机点名</title>
+		<style type="text/css">
+			#container{
+				  width:100%;
+				  height: 720px;
+				  text-align: center;
+			}
+			p{
+				 font-size: 40px;
+			}
+			.CallName{
+				text-decoration: none;
+				list-style-type: none;
+				 
+			}
+			.CallName li{
+				 float: left;
+				  text-align: center;
+				  margin-left: 30px;
+			}
+			.clear{
+				  clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<p>点名</p>
+			
+			<div class="clear"></div>
+			<button type="button">开始</button>
+			<button type="button" >结束</button>
+		</div>
+		<script type="text/javascript">
+			var start= document.getElementsByTagName("button")[0];
+			var end=document.getElementsByTagName("button")[1];
+		 var CallName=["张三","李四","网二","黑寡妇"];
+		 for(var j=0;j<CallName.length;j++){
+			 
+					  };
+		start.onclick=function(){
+		  // console.log(num);
+				  for(var i=0;i<CallName.length;i++){
+	               
+				  
+				   }
+				    i = Math.ceil(Math.random()*3);
+				   
+				  alert(CallName[i]);
+				  var paa=document.getElementsByTagName("p");
+				  paa.innerHTML="CallName[i]";
+				    }
+			
+		
+		</script>
+	</body>
+</html>

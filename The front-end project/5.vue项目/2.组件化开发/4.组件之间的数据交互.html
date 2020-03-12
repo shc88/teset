@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 静态的传递数据 -->
+			<hello-world title="你是小猪"></hello-world>
+			<!-- 动态的传递数据 -->
+			<hello-world :me="me"></hello-world>
+		</div>
+		<script src="lib/vue-2.4.0.js"></script>
+		<script>
+			//定义一个组件
+			/*
+		如果在props中使用驼峰的形式,模板中需要使用短横线的方式
+		在字符串形式中没有限制
+			*/
+			Vue.component('hello-world',{
+				props:['title','me'],
+				data:function(){
+					
+					 return {
+						  msg:"你是个小猪"
+					 }
+					
+				},
+				template:"<p>{{msg+'-------'+me}}</p>"
+			})
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					 pmsg:"你是个小猪222",
+					 me:"你是谁"
+				}
+			})
+		</script>
+	</body>
+</html>

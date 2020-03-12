@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				 padding:0;
+				 margin: 0;
+				 font-size: 28px;
+			}
+			#ccc{
+				 position: absolute;
+				 left: 200px;
+				 top: 200px;
+				 margin-left: 30px;
+			}
+			#ccc li{
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				border: 1px solid #A52A2A;
+				 float: left;
+				 list-style-type: none;
+				
+			}
+			.active{
+				  background-color: red;
+			}
+			#imgs li{
+				 width:396px ;
+				 height: 251px;
+				 display: none;
+			}
+			 #imgs>.cutter{
+				  display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dv">
+			<ul id="ccc">
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<ul id="imgs">
+				<li class="cutter"><img src="img/timg0.jpg" ></li>
+				<li><img src="img/timg1.jpg" ></li>
+				<li><img src="img/timg2.jpg" ></li>
+				<li><img src="img/timg3.jpg" ></li>
+			</ul>
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				 $("#ccc>li").mouseenter(function(){
+					   $(this).addClass("active");
+					   $(this).siblings().removeClass("active");
+					  var index=$(this).index();
+					   console.log(index);
+					   $("#imgs>li").siblings().removeClass("cutter");
+					   $("#imgs>li").eq(index).addClass("cutter");
+					   
+				 })
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<style type="text/css">
+	
+		#txt{
+			  width: 300px;
+			  height: 40px;
+			  
+		}
+		#btn{
+			  width: 50px;
+			  height: 30px;
+			  background-color: blue;
+			  border: 1px solid  #0000FF;
+			  color: white;
+		}
+		#container{
+			  width:1080px;
+		}
+		#container {
+			  position:absolute;
+			  left: 450px;
+		}
+		p:hover{
+			 
+		}
+	</style>
+	</head>
+	<body>
+		<div id="container">
+			<input type="text" name="" id="txt" value="" />
+			<input type="button" name="" id="btn" value="创建" />
+		</div>
+		
+	<script src="js/conner.js"></script>
+	<script type="text/javascript">
+		var  keywords=["王晓最咋这样呢","王我一个吻可以不可以","金陵十三钗","金山十三太保","王好啊好"];
+		   $("txt").onkeyup=function(){
+			   if($("dv")){
+				      $("container").removeChild($("dv"));
+			   }
+			       var txt=this.value;   //文本框的内容获取输入的内容
+				   var  newarr=[]; //创建一个新的数组
+				  for(var i=0;i<keywords.length;i++){
+					     if(keywords[i].indexOf(txt)==0){
+					         newarr.push(keywords[i]);  //把获取到的数组添加到新数组中
+					     }
+				  }
+				  if(this.value.length==0 || newarr.length==0){
+					    if($("dv")){
+							 $("container").removeChild($("dv"));
+							
+						}
+					 return;
+				  }
+				  
+				  //创建div
+				var dvobj=document.createElement("div");
+				dvobj.style.width="350px";
+				dvobj.id="dv";
+				
+				dvobj.style.border="solid 1px red";
+				$("container").appendChild(dvobj);
+				//创建p标签
+				for(var z=0;z<newarr.length;z++){
+					   var pobj=document.createElement("p");
+					   var text=newarr[z];
+					  
+					   pobj.innerHTML=text;
+					   
+					  pobj.style.margin=0;
+					  pobj.style.cursor="pointer";
+					 
+				pobj.onmouseover=function(){
+					this.style.backgroundColor="green";
+						   }
+				pobj.onmouseout=function(){
+					this.style.backgroundColor="";
+						}
+						dvobj.appendChild(pobj);
+					  }
+					   
+				}
+		   
+	</script>
+	</body>
+</html>

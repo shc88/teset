@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+		<style type="text/css">
+			#dv1{
+				  width:400px;
+				  height: 400px;
+				  background-color: aqua;
+			}
+			#dv2{
+				 width: 300px;
+				 height: 300px;
+				 background-color: brown;
+			}
+			#dv3{
+				  width: 200px;
+				  height: 200px;
+				  background-color:blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+	   <div id="dv1"><div id="dv2"><div id="dv3"></div></div></div>
+	   <script src="js/conner.js"></script>
+	   
+		<script type="text/javascript">
+			/*
+			window.event.cancelBubble=true;   火狐特有的，谷歌支持 ，ie8不支持
+			e.stopPropagation();       火狐不支持，ie8支持，谷歌也支持
+			*/
+		     $("dv1").onclick=function(){
+				  console.log(this.id);
+				  
+			 }
+			 $("dv2").onclick=function(e){
+			 				  console.log(this.id);
+							  return false;   //e是一个对象，是事件处理参数对象
+							  
+			 }
+			 $("dv3").onclick=function(){
+			 				  console.log(this.id);
+							  return false;
+			 }
+			  var dr=[$("dv1"),$("dv2"),$("dv3")];
+			    //批量注册点击事件
+			 // dr.forEach(function(ele){
+				//        ele.addEventListener("click",function(){
+				// 		          console.log(this.id);
+				// 	   },true);
+			 //})
+			 
+		</script>
+	</body>
+</html>

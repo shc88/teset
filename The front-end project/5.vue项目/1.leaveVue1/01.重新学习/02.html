@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<p>{{count}}</p>
+    <input type="button" value="加" @click="add">
+    <input type="button" value="减" @click="jian">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+          count:0
+          },
+          methods:{
+              add(){
+                  this.count++;
+              },
+              jian(){
+          this.count--;
+              }
+          }
+       })
+</script>
+</body>
+</html>

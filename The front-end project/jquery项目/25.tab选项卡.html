@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			#container {
+				width: 100%;
+				height: 100%;
+			}
+
+			#inner {
+				width: 800px;
+           background-color: #00FFFF;
+			}
+
+			#inner>li {
+				float: left;
+				list-style-type: none;
+				width: 100px;
+				color: black;
+				text-align: center;
+				line-height: 50px;
+				height: 50px;
+				border: 1px solid black;
+				
+
+			}
+
+			#clear {
+				clear: both;
+			}
+
+			#innertext>li {
+				width: 396px;
+				height: 251px;
+				display: none;
+			}
+
+			#innertext .cutter1 {
+				display: block;
+			}
+			.cunn{
+				  background-color: red;
+				  z-index: 999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="inner">
+
+				<li class="cunn">one</li>
+				<li>two</li>
+				<li>three</li>
+				<li>four</li>
+			</ul>
+			<div id="clear">
+
+			</div>
+			<ul id="innertext">
+				<li class="cutter1"><img src="img/timg0.jpg" alt=""></li>
+				<li><img src="img/timg1.jpg" alt=""></li>
+				<li><img src="img/timg2.jpg" alt=""></li>
+				<li><img src="img/timg3.jpg" alt=""></li>
+			</ul>
+		</div>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+      //          $this选中当前的
+			   // siblings()选中非当前的
+				$("#inner>li").mouseenter(function() {
+					$(this).addClass("cunn");
+					$(this).siblings().removeClass("cunn");
+					var index=$(this).index();
+					$("#innertext>li").siblings().removeClass("cutter1");
+					$("#innertext>li").eq(index).addClass("cutter1");
+					
+				});
+		
+			})
+		</script>
+	</body>
+</html>

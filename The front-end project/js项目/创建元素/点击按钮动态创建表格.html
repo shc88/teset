@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态创建表格</title>
+		<style type="text/css">
+			#dv{
+				   width:300px;
+				   height: 300px;
+				   border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="创建" />
+		<div id="dv">
+			
+		</div>
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+			var  arr=[
+				{name:"百度",href:"https://www.baidu.com/"},
+				{name:"腾讯",href:"https://www.baidu.com/"},
+				{name:"谷歌",href:"https://www.baidu.com/"},
+				{name:"qq",href:"https://www.baidu.com/"},
+			];
+			$("btn").onclick=function(){
+			   var tableobj=document.createElement("table");  //创建表格
+			   $("dv").appendChild(tableobj);
+			   tableobj.border="1";
+			   tableobj.cellPadding="0";
+			   tableobj.cellSpacing="0";
+			   for(var i =0;i<arr.length;i++){
+				   var td=arr[i];  //每一个对象
+				      var trobj=document.createElement("tr"); //创建行
+					  tableobj.appendChild(trobj);
+					  //创建第一列
+					  var td1=document.createElement("td");
+					  td1.innerHTML=td.name;
+					  trobj.appendChild(td1);
+					  //创建第二列
+					  var td2=document.createElement("td");
+					  td2.innerHTML="<a href="+td.href+">"+td.name+"</a>";
+					  trobj.appendChild(td2);
+			   }
+			}
+		</script>
+	</body>
+</html>

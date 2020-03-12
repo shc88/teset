@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#dv{
+				 width: 300px;
+				 height: 300px;
+				 background-color: #DC143C;
+				 border-radius:25px;
+				 position: absolute;
+				 
+			}
+			*{padding:  0;
+			margin: 0;}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn0" value="移动400px" />
+		<input type="button" name="" id="btn1" value="移动800px" />
+		<div id="dv">
+			
+		</div>
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+			var cut=$("dv").offsetLeft;   //获取的原本位置
+			
+		   $("btn0").onclick=function(){
+			 donghua($("dv"),300);
+			  
+		   }
+		   //移动函数
+		   function donghua(element,times){
+			   clearInterval(element.time);
+			   element.time=setInterval(function(){
+			   				    leftp=9;
+								   //times就是目标位置
+								   //leftp就是移动的距离
+								  leftp=cut<times?leftp:-leftp;
+								  cut=cut+leftp;
+			   				    
+			   					if(Math.abs(times-cut)>Math.abs(leftp)){
+									element.style.left=cut+"px";
+			   						   
+			   					}
+								else{
+									 clearInterval(time);
+									 element.style.left=times+"px";
+								}
+			   					},50);
+			     }
+		   //如果样式是在style标签里的，外面是获取不到的 只能用offsetLeft获取
+		   //如果样式是在style属性里写的，是可以获取到的
+ 		   $("btn1").onclick=function(){
+			   donghua($("dv"),800);
+		   }
+		</script>
+	</body>
+</html>

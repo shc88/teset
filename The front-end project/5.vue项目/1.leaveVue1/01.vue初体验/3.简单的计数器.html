@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+          <p>当前计数：{{container}}</p>
+    <button v-on:click="add">加</button>
+    <button @click="reduce">减</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+      const app=new Vue({
+              el:"#app",
+          data:{
+                 container:1
+          },
+          methods:{
+              add(){
+
+                  //在函数中拿到变量，要加this 要不然找的是全局变量
+                    this.container++;
+
+              },
+              reduce(){
+
+                  if(this.container<=0){
+                        this.container=0;
+                  }else{
+                      this.container--
+                  }
+              },
+
+
+          }
+       })
+</script>
+</body>
+</html>

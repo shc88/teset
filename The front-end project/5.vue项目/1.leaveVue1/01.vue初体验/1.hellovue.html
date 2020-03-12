@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+           * {
+               padding: 0;
+               margin: 0;
+           }
+
+    </style>
+</head>
+<body>
+<div id="app"><p>{{msg}}</p>
+<h1>{{name}}</h1></div>
+<script src="../js/vue.js"></script>
+<script>
+    //let（定义变量）和const（定义常量）  let是块级作用域，只在本单元内使用
+ const app=new Vue({
+  el:"#app",  //用于挂载要管理的元素
+  data:{     //定义数据
+         msg:"你是个小猪",
+       name:"请问你是"
+  },
+
+ })
+</script>
+</body>
+</html>

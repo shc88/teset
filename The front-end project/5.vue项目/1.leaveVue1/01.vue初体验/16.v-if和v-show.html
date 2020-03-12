@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+    <input type="button" v-on:click="toggle" value="toggle">
+<!--    v-if 每次都会重新创建元素或者删除元素
+        v-show   不会每次都进行DOM操作，只是把DOM元素隐藏和显示
+       v-if 有较高的切换性能消耗， v-show有较高的初始渲染消耗
+
+       如果元素设置到频繁的切换，最好不要使用v-if
+       如果元素可能永远也不会被显示出来，那么就不要用v-show
+-->
+    <h3 v-if="flag">这是if控制的元素</h3>
+    <h3 v-show="flag">这是show控制的元素</h3>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+           flag:false,
+          },
+          methods:{
+              toggle(){
+                  this.flag= !this.flag;
+              }
+          }
+       })
+</script>
+</body>
+</html>

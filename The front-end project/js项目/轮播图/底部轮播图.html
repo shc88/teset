@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	 <style type="text/css">
+	 	*{
+			  padding: 0;
+			  margin: 0;
+			  border: 0;
+		}
+  #container{
+	     width: 690px;
+		 height: 380px;
+		 margin: 100px auto;
+		 padding: 5px;
+		 border: 1px #ccc solid;
+  }
+	#spana li a{
+		  float: left;
+	}
+	#ulobj{
+		position: absolute;
+		left: 400px;
+		top:340px;
+	}
+	#ulobj span{
+		  float: left;
+		  list-style-type: none;
+		  text-decoration: none;
+		  width: 20px;
+		  height: 20px;
+		  background-color:white;
+		  margin-left: 20px;
+		  text-align: center;
+		  color: black;
+		  cursor: pointer;
+	}
+	#inner{
+		  width: 690px;
+		  height:380px;
+		  overflow: hidden;
+		  position: relative;
+	}
+	#inner ui{
+		 width: 100%;
+		 position: absolute;
+		 left: 0;
+		 height: 0;
+	}
+	#spana{
+		  width: 2760px;
+		  position: absolute;
+		  top:0px;
+	}
+	#spana li{
+		  float: left;
+		  list-style-type: none;
+		  text-decoration: none;
+	}
+	 </style>
+	</head>
+	<body>
+		  <div id="container">
+			  <div id="inner">
+				  <ul id="spana" style="left:0px;">
+				   <li><a href="#"><img src="img/1.jpg" ></a></li>
+				   <li><a href="#"><img src="img/2.jpg" ></a></li>
+				   <li><a href="#"><img src="img/3.jpg" ></a></li>
+				   <li><a href="#"><img src="img/4.jpg" ></a></li>
+				  </ul>
+				  <div id="ulobj">
+				  	<span>1</span>
+				  	<span>2</span>
+				  	<span>3</span>
+				  	<span>4</span>
+				  </div>
+			  	
+			  </div>
+		  	
+		  </div>
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var inner=$("inner");
+				var spanobjs=$("ulobj").getElementsByTagName("span");
+				var innerwidth=inner.offsetWidth;
+				var ulobj=$("spana");
+				for(var i =0;i<spanobjs.length;i++){
+			//循环的时候把索引值保存在每个span标签的自定义属性之中
+		       spanobjs[i].setAttribute("index",i);
+			
+				//注册鼠标进入事件
+					spanobjs[i].onmouseover=function(){
+					  //干掉当前的span标签上的背景颜色
+					  for(var j=0;j<spanobjs.length;j++){
+						 spanobjs[j].style.backgroundColor="white";
+						  }
+					  //添加span标签上的背景颜色
+					 this.style.backgroundColor="red";
+					 // 移动ul（每个图片的宽*鼠标放在这个按钮的索引值）
+					 var index=this.getAttribute("index");
+					 donghua(ulobj,-index*innerwidth);
+					 
+				}
+				}
+				// setInterval(function(){
+				// 	var leftp=$("spana").offsetLeft;
+					
+				// 	 if(leftp == -2070){
+				// 		   leftp=0;
+				// 	 }else{
+				// 		  leftp=leftp-690;
+				// 	 }
+				// 	 console.log(leftp);
+				// 	$("spana").style.left=leftp+"px";  
+				// 	$("spana").style.transition="1s";
+				// },1000);
+				 
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7.css">
+</head>
+<body>
+<div id="app">
+    <label for="">id:
+        <input type="text" v-model="id">
+    </label>
+
+    <label for="">name:
+<!--         使用@keypress 键值修饰符-->
+    <input type="text"  v-model="name" @keypress="add()">
+     </label>
+    <input type="button" value="添加" @click="add()" >
+    <label for="">搜索关键字:
+<!--        在vue中，所有的指定都以v-开头-->
+        <input type="text"  v-model="keyWord" id="sear" v-color="'blue'">
+    </label>
+    <input type="button" value="搜索">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>ctime</th>
+            <th>operation</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr v-for="item in search(keyWord)" :key="item.id">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{dataStr|ctimeForm('')}}</td>
+            <td><a href="" @click.prevent="deleteData(item.id)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+
+    //全局的过滤器
+    /*
+      使用ES6中的字符串的新方法String.prototype
+      .padStart(maxLength,fillString='')
+      成String.prototype.padEnd(MAXlength,fillSting
+      ='')来填充字符串
+
+     */
+
+    Vue.filter('ctimeForm',function(dataStr,pre=""){
+        var date=new Date();
+        var y=date.getFullYear();
+        var m=date.getMonth()+1;
+        var s=date.getDate();
+
+        if(pre.toLowerCase()== "yyyy-mm-dd"){
+            return `${y}-${m}-${s}`;
+        }
+        else
+        {
+            var yyyy=date.getHours().toString().padStart(2,"0");
+            var mm=date.getMinutes().toString().padStart(2,"0");
+
+            var second=date.getSeconds().toString().padStart(2,"0");
+
+            return `${y}-${m}-${s} ${yyyy}:${mm}:${second}`
+        }
+    })
+    //自定义全局键值修饰符
+
+
+    //自定义指令
+    // 定义全局的指令
+// 其中，参数1:指令的名称，在定义的时候不需要加v-前缀,但是在调用的时候必须在指令名称前加上v-
+    //参数2是一个对象，这个对象身上，有一些指令相关的函数，
+    //这些函数在特定的阶段，执行相关的操作
+    Vue.directive('focus',{
+        bind:function(el){   //每当指令绑定到元素上的时候，会立即执行这个函数，只执行一次
+
+                    //在每个函数中，第一个参数必须是el，表示被绑定指令的那个元素，这个el是一个原生js对象
+               //在元素刚绑定指令的时候，还没到插入到DOM中。调用focus没有作用
+            // 因为一个元素，只要在插入到DOM之后才有作用
+            //el.focus();
+			el.focus();
+        },     //绑定的时候
+        inserted:function(el){  //表示元素插入到DOM中的时候，会执行这个函数，触发一次
+          
+        },  //插入的时候
+        updated:function(){   //当vnode更新的时候，会执行updated 可能会触发多次
+
+        }      //更新完成的时候
+    })
+  //样式只要通过指令绑定给了元素，不管这个元素有没有被插入到页面中去
+    //这个元素肯定有了一个内联的样式
+    //将来元素肯定会显示到页面中去 ，浏览器的渲染引擎肯定会解析样式，应该给这个元素
+      Vue.directive('color',{
+      bind:function(el,binding){
+          //和样式相关的一般都可以在bind里面执行
+          el.style.color=binding.value;
+
+
+      },
+    inserted:function(el){
+  //和js有关的最好在inserted中去执行，防止这个js行为不生效
+       },
+     updated:function(el){
+
+     }
+})
+
+
+      const app=new Vue({
+          el:"#app",
+          data:{
+              dataStr:"",
+              id:'',
+              name:'',
+              keyWord:"",  //搜索的关键字
+        list:[
+            {id:1,name:'奔驰马'},
+            {id:2,name:'宝马'},
+            {id:3,name:'保时捷'},
+            {id:4,name:'奥迪'},
+
+        ]
+          },
+          methods:{
+           add(){
+
+                 this.list.push({id:this.id,name:this.name});
+                 this.id=this.name="";
+
+           },
+           deleteData(id){
+                 // this.list.some((item,i)=>{
+                 //     if(item.id == id){
+                 //        this.list.splice(i,1);
+                 //         return true;
+                 //     }
+                 // })
+               //findIndex 寻找索引
+               var index=this.list.findIndex(item=>{
+                   if(item.id==id){
+
+                    return true;
+                   }
+
+               })
+               this.list.splice(index,1);
+           },
+              //foreach,some,findIndex,filter  数组的新方法
+            search(keyWord){
+            //根据关键字进行数据的搜索
+
+          //        this.list.forEach(item=>{
+          //              if(item.name.indexOf(keyWord)!=-1){
+          //                 newList.push(item);
+          //              }
+          //        })
+          // return newList;
+             return this.list.filter(item=>{
+            if(item.name.includes(keyWord)){
+                  return item;
+              }
+               }
+                )
+              }
+          }
+       })
+
+      //过滤器的定义语法
+    //Vue.filter('过滤器的名称',function(){})
+      //过滤器第一个参数必须是过滤器管道符前面传过来的数据
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="王晓飞" />
+		<input type="button" name="" id="btn2" value="解绑" />
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+		function f1(){
+			  console.log(11);
+		}
+		function f2(){
+			  console.log(12);
+		}
+		$("btn").addEventListener("click",f1,false);
+		$("btn").addEventListener("click",f2,false);
+		
+		
+		
+		
+		function addEventListener1(Element,type,boolan){
+			       if(Element.addEventListener){
+					    Element.addEventListener(type,boolan,Element);
+				   }else if(Elment.attachEvent){
+					     Element.attachEvent("on"+type,boolan);
+				   }
+				   else{
+					     Element["on"+type]=boolan;
+				   }
+			   }
+			   addEventListener1($("btn"),"click",false);
+			   // function removeEventListener2(Element,type,boolan){
+			   // 	       if(Element.removeEventListener){
+			   // 			    Element.removeEventListener(type,boolan,Element);
+			   // 		   }else if(Elment.detachEvent){
+			   // 			     Element.detachEvent("on"+type,boolan);
+			   // 		   }
+			   // 		   else{
+			   // 			     Element["on"+type]=fn;
+			   // 		   }
+			   // 	   }
+		</script>
+	</body>
+</html>

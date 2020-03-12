@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.father{
+				 width: 500px;
+				 height: 500px;
+				 background-color: #0000FF;
+			}
+			.son{
+				 width: 200px;
+				 height: 200px;
+				 background-color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son" id="btn"></div>
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		 //hover方法中，传两个参数：第一个就是移入，第二个就是移除
+		 //传一个参数：那么就是移入移出
+			$(".father").hover(function(){
+				  console.log("这是射门2");
+			})
+		</script>
+	</body>
+</html>

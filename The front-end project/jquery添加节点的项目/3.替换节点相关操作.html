@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="替换" id="btn">
+<h1>暴走萝莉</h1>
+<h1>狂暴冲怒</h1>
+<p>213123</p>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+$(function(){
+/*
+替换节点的相关操作
+replaceWith(content|fn)
+replaceAll(selector)
+ */
+var $h6=$("<h6>我是未来守护者</h6>");
+$("#btn").click(function(){
+    //replaceWith的使用方法
+    //      $("h1").replaceWith($h6);
+         //replaceAll的使用方法
+    $h6.replaceAll("h1");
+
+})
+})
+</script>
+</body>
+</html>

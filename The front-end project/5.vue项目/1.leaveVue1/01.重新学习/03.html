@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+    <input type="button" value="浪起来" @click="getA">
+    <input type="button" value="停止" @click="getB">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+           msg:"王晓猪就知道睡觉",
+              time:null
+          },
+          methods:{
+              getA(){
+                  if(this.time!=null) return;
+                 this.time=setInterval(()=>{
+                     var start=this.msg.substring(0,1);
+                     var end=this.msg.substring(1);
+                     this.msg=end+start;
+                 },500);
+              },
+              getB(){
+
+                  clearInterval(this.time);
+                  this.time=null;
+              }
+          }
+       })
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="创建个数啊" />
+		<script src="js/conner.js"></script>
+	<script type="text/javascript">
+	$("btn").onclick=f1;
+	$("btn").onmouseover=f1;
+	$("btn").onmouseout=f1;
+	function f1(e){
+		  switch(e.type){
+			     case "click":alert("这是我的函数啊"); break;
+				 case "mouseover":this.style.backgroundColor="red";  break;   //一定要加break 要不然循环就是循序执行，就会把上面的覆盖掉
+				 case "mouseout":this.style.backgroundColor="green";  break;
+		  }
+	}
+	</script>
+	</body>
+</html>

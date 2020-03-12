@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#dv {
+				width: 100px;
+				height: 200px;
+
+				background-color: #0000FF;
+
+			}
+
+			#dv2 {
+				width: 100px;
+				height: 200px;
+
+				background-color: red;
+
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button">自定义动画</button>
+		<button type="button">累加属性</button>
+		<div id="dv">
+
+		</div>
+		<div id="dv2">
+
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/*
+				自定义动画函数：
+				第一个参数是要执行的动画
+				第二个参数是速度
+				第三个参数是linear匀速或者是swing缓速
+				第四个参数是动画执行完毕要执行的函数
+				*/
+				$("button").eq(0).click(function() {
+					$("#dv").animate({
+						marginLeft: "500px"
+					}, 5000, "linear", function() {
+						alert("我车给狗狗了");
+					})
+				})
+				//累加属性
+				$("button").eq(1).click(function() {
+					$("#dv2").animate({
+						width:"+=100"
+					}, 1000, "swing", function() {
+
+					})
+				})
+				//关键字
+                     $("button").eq(1).click(function() {
+					$("#dv2").animate({
+						width:"hide"
+					}, 1000, "swing", function() {
+
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

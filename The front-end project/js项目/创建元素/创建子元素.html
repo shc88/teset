@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#dv{
+				  width: 220px;
+				  height: 200px;
+				  border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="创建" />
+		<input type="button" name="" id="btn3" value="干掉第一个元素" />
+		<input type="button" name="" id="btn4" value="干掉全部元素" />
+		<div id="dv">
+			
+		</div>
+		<script src="js/conner.js"> </script>
+		<script type="text/javascript">
+			var i =0;
+              $("btn").onclick=function(){
+				  i++;
+				  var inputs=document.createElement("input");
+				  
+					  inputs.type="button";
+					  inputs.value="按钮"+i;
+					  //
+					  
+					   $("dv").appendChild(inputs);
+				  }
+				
+				
+			  	
+			  $("btn3").onclick=function(){
+				    $("dv").removeChild($("dv").firstElementChild);
+			  }
+			  $("btn4").onclick=function(){
+				   while($("dv").firstElementChild){
+						  $("dv").removeChild($("dv").firstElementChild);
+					}
+			  }
+			  
+		</script>
+	</body>
+</html>

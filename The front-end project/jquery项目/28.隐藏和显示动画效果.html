@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#dv{
+				  width: 500px;
+				  height: 500px;
+				  background-color: #FF0000;
+				  display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<button type="button">显示</button>
+		<button type="button">隐藏</button>
+		<button type="button">切换</button>
+		<div id="dv">
+			
+		</div>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				/*
+				show 显示动画
+				hide 隐藏动画
+				toggle 切换动画
+				*/
+				  $("button").eq(0).click(function(){
+				  	$("#dv").show(1000,function(){
+						 alert("显示一个参数0"); 
+					})
+				  })
+				  $("button").eq(1).click(function(){
+				  	$("#dv").hide(1000,function(){
+				  		 alert("隐藏一个参数0"); 
+				  	});
+				  });
+				  $("button").eq(2).click(function(){
+				  	$("#dv").toggle(1000,function(){
+				  		 alert("切换一个参数0"); 
+				  	})
+				  })
+			})
+		</script>
+	</body>
+</html>

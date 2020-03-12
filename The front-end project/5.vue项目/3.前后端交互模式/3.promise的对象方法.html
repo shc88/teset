@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="发送get请求">
+    <script>
+        var btn=document.getElementById("btn");
+        //Fetch API的基本用法
+        //  btn.onclick=function(){
+        //     fetch('https://autumnfish.cn/api/joke/list?num=3',{method:"get"}).then(function(data){
+        //    console.log(data); 
+        // },function(data){
+        //       alert(data);
+        // })
+        //  }
+        //text()方法属于fetchAPI的一部分，它返回的是一个
+        //Promise实例对象，用于获取后台的数据
+        btn.onclick=function(){
+            fetch('https://autumnfish.cn/api/joke/list?num=3',{method:"get"}).then(function(data){
+           console.log(data); 
+        },function(data){
+              alert(data);
+        })
+         }
+    </script>
+</body>
+</html>

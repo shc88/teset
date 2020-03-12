@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				  position: absolute;
+				  margin-left: 50px;
+				 
+					
+							 }
+		</style>
+	</head>
+	<body>
+		<input type="button"  name="" id="btn" value="这是啥个" />
+		<input type="button" name="" id="btn2" value="停止" />
+		<div id="dv">
+			<img src="img/time.jpg" width="200" height="300">
+			<img src="img/time2.jpg" width="200" height="300">
+		</div>
+		
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+			//定时器 
+			/*
+			函数setInterval
+			参数1：
+			参数2：时间  毫秒 1000毫秒==1秒
+			//执行过程，页面加载完毕后，过了1秒 执行一次
+			函数的代码 再过一秒在执行
+		    清楚定时器
+			函数clearInterval
+			
+			*/
+		   
+		   var time;
+		   var times=f1;
+		 
+	     $("btn").onclick=f1;
+	
+	
+	function f1(){
+			time=setInterval(function(){
+					    var x=parseInt(Math.random()*100+1);
+					    
+					    				 
+					     
+					     $("dv").style.left=x+"px";
+					     
+					   
+				  },100);
+				 this.value="提交中";
+				 this.onclick="";
+		   }
+		  
+	$("btn2").onclick=function(){
+	   $("btn").onclick=f1; 
+		    clearInterval(time);
+	} 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p v-text="msg" v-color="'blue'"></p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      var app=new Vue({
+          el:"#app",
+          data:{
+           msg:"你是个小猪"
+          },
+          methods:{
+
+          },
+          directives:{
+               'color':{
+                    bind:function(el,binding){
+                     el.style.color=binding.value;
+
+                    },
+                   inserted:function(){
+
+                   },
+                   updated:function(){
+
+                   }
+                      }
+          }
+       })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="溢出" />
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			function text1(){
+				   alert("text1");
+			}
+			$("#btn").click(text1);
+			function text2(){
+				alert("text2");
+			}
+			$("#btn").click(text2);
+			$("#btn").mouseover(function(){
+				alert("mouseover");
+			})
+			$("#btn").mouseout(function(){
+				alert("mouseout");
+			})
+			
+	   //事件移除
+	    //如果不传参数，那么就会移除这个元素上的所有事件
+	   $("#btn").off();
+	   //如果传了一个参数，那么就会移除同类型的参数
+	   $("#btn").off("click");
+	   //第二个参数就是移除这个元素上的事件
+	       $("#btn").off("click",text1);
+		</script>
+	</body>
+</html>

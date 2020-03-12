@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+   [v-cloak]{
+          display: none;
+   }
+    </style>
+</head>
+<body>
+<!--//v-cloak 可以解决插值表达式的闪烁问题
+  插值表达式可以插入各种元素
+ -->
+<div id="app"><p v-cloak>+++++{{msg}}</p>
+<!--    v-text默认是没有闪烁问题的，不可以插入元素-->
+
+<p v-text="msg">++++</p>
+<p v-html="msg2"> </p></div>
+
+<script src="../js/vue.js"></script>
+<script>
+      const app=new Vue({
+              el:"#app",
+              data: {
+                    msg:123,
+                  msg2:"<h1>请问你是以恶搞小猪吗</h1>",
+              }
+       })
+</script>
+</body>
+</html>

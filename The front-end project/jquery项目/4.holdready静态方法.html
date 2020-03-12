@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			//holdready静态方法的作用是暂停入口文件的执行
+			$.holdReady(true);
+			$(function(){
+				
+				
+            alert("123");
+					  
+				});
+				  
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="创建">
+		
+		<script type="text/javascript">
+			var  btn=document.getElementById("btn");
+			btn.onclick=function(){
+				   $.holdReady(false);
+			}
+			
+		</script>
+	</body> 
+</html>

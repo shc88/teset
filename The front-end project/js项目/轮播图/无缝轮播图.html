@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+
+			#container {
+				width: 690px;
+				height: 380px;
+				margin: 100px auto;
+				padding: 5px;
+				border: 1px #ccc solid;
+			}
+
+			#spana li a {
+				float: left;
+			}
+
+			#ulobj {
+				position: absolute;
+				left: 400px;
+				top: 340px;
+			}
+
+			#ulobj span {
+				float: left;
+				list-style-type: none;
+				text-decoration: none;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				margin-left: 20px;
+				text-align: center;
+				color: black;
+				cursor: pointer;
+			}
+
+			#inner {
+				width: 690px;
+				height: 380px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			#inner ui {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				height: 0;
+			}
+
+			#spana {
+				width: 3450px;
+				position: absolute;
+				top: 0px;
+			}
+
+			#spana li {
+				float: left;
+				list-style-type: none;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="inner">
+			<ul id="spana">
+				<li><a href="#"><img src="img/1.jpg"></a></li>
+				<li><a href="#"><img src="img/2.jpg"></a></li>
+				<li><a href="#"><img src="img/3.jpg"></a></li>
+				<li><a href="#"><img src="img/4.jpg"></a></li>
+				<li><a href="#"><img src="img/1.jpg"></a></li>
+			</ul>
+		</div>
+		<script src="js/conner.js"></script>
+		<script type="text/javascript">
+			var currrent = 10;
+
+			function lunbo() {
+				var ulobj = $("spana");
+				currrent -= 10;
+
+				if (currrent < -2760) {
+					ulobj.style.left = 0 + "px";
+					currrent = 0;
+				} else {
+					ulobj.style.left = currrent + "px";
+				}
+
+			}  
+			
+		
+		  var time=setInterval(lunbo, 20);
+		  var  box=$("inner");
+		  box.onmouseover=function(){
+			     clearInterval(time);
+		  }
+		  box.onmouseout=function(){
+			  //定时器清理掉了就没有了，只能重新开启一个定时器
+			    time=setInterval(lunbo,20);
+		  }
+		</script>
+	</body>
+</html>

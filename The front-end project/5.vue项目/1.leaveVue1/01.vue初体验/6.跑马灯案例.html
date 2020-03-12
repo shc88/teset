@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="浪起来" @click="startDong">
+    <input type="button" value="停止" @click="endDong">
+    <h4>{{msg}}</h4>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+      const app=new Vue({
+              el:"#app",
+          data:{
+                  msg:"王小猪是一个猪啊，就知道睡觉",
+              time:null
+          },
+          methods:{
+
+              startDong(){
+                  if(this.time!=null)return;
+                  this.time= setInterval(() =>{
+                      var start=this.msg.substring(0,1);
+                      var end= this.msg.substring(1);
+                      this.msg=end+start;
+                  },100)
+
+              },
+              endDong(){
+                  clearInterval(this.time);
+                  this.time=null;
+              }
+          }
+       })
+</script>
+</body>
+</html>

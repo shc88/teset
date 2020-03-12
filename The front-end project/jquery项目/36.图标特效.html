@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				  margin: 0;
+				  padding: 0;
+			}
+			ul{
+				  list-style: none;
+				  width: 450px;
+				  height: 300px;
+				  border: 1px solid #000000;
+				  margin: 100px auto;
+			}
+			ul>li{
+				  width: 150px;
+				  text-align: center;
+				  
+				  height: 150px;
+				  float: left;
+				  overflow: hidden;
+			}
+			ul>li>span{
+				 display: inline-block;
+				 width: 100px;
+				 height: 100px;
+				 position: relative;
+				 
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span><img src="img/tubiao1.png" ></span>
+				<p>百度</p>
+			</li>
+			<li>
+				<span><img src="img/tubiao2.png" ></span>
+				<p>谷歌</p>
+			</li>
+			<li>
+				<span><img src="img/tubiao3.png" ></span>
+				<p>腾讯</p>
+			</li>
+			<li>
+				<span><img src="img/tubiao4.png" ></span>
+				<p>百度</p>
+			</li>
+			<li>
+				<span><img src="img/tubiao5.png" ></span>
+				<p>谷歌</p>
+			</li>
+			<li>
+				<span><img src="img/tubiao6.png" ></span>
+				<p>腾讯</p>
+			</li>
+			
+		</ul>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$("li").mouseenter(function(){
+				   $(this).children("span").animate({
+					    top:"-150px"
+				   },1000,function(){
+					     $(this).css("top","50px")
+				   }).animate({
+					    top:0
+				   },1000)
+					
+			})
+			
+		</script>
+	</body>
+</html>
