@@ -16,3 +16,8 @@ git add ./demo.md
 (2)把代码放到房间里
 git commit 这是把代码放到仓库里了
 git commit -m "这是什么"  -m是给个提示，“”里面的内容就是提示
+仓储的房间就是版本库
+project就是工作区
+
+
+第三个功能
